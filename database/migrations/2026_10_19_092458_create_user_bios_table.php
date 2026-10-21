@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('unique_fact');
             $table->string('hobby');
             $table->string('major');
+            $table->string('role');
             $table->string('address');
             $table->integer('age');
             $table->rememberToken();     // Generates nullable remember_token column
