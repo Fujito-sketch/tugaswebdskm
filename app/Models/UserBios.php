@@ -25,6 +25,7 @@ class UserBios extends Authenticatable
         'password',
         'about_me',
         'unique_fact',
+        'role',
         'hobby',
         'major',
         'address',

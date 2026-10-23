@@ -27,6 +27,6 @@
         <button type="submit">Submit</button><br>
     </form>
     <p>Already made an account?</p>
-    <p>Log <a href="{{ route('login') }}">The Fuck In</a></p>
+    <p>Let's <a href="{{ route('login') }}">Log In</a></p>
 </body>
 </html>

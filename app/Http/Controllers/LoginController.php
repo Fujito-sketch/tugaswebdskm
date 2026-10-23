@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\UserBios;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+
 
 class LoginController extends Controller
 {
@@ -27,7 +31,25 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $logname = $request->input('username');
+        $logpass = $request->input('pass');
+
+        $datacheck = UserBios::where([
+            ['username', '=', $logname,],
+        ])->first();
+
+        if($datacheck && Hash::check($logpass, $datacheck->password)){
+            Auth::login($datacheck);
+            $request->session()->regenerate();
+
+            return redirect('/dashboard');
+        }
+
+        return redirect('/login');
+    }
+
+    public function showboard(){
+        return view('dashboard');
     }
 
     /**
@@ -60,5 +82,14 @@ class LoginController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function logout(Request $request){
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/');
     }
 }
