@@ -36,7 +36,6 @@ class UserBios extends Authenticatable
      * The attributes that should be hidden for serialization.
      */
     protected $hidden = [
-        'password',
         'remember_token',
     ]; //
 

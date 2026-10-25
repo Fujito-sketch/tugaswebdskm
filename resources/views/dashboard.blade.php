@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <x-package-dashbar/>
     <h1>This is a Dashboard</h1>
     <br>
     <h1>This is a Logout Button</h1>

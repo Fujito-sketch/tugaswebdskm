@@ -16,6 +16,12 @@
         <input type="password" name="pass"><br>
         <label>E-Mail   : </label>
         <input type="text" name="email"><br>
+        <label>Address   : </label>
+        <input type="text" name="address"><br>
+        <label>Hobby   : </label>
+        <input type="text" name="hobby"><br>
+        <label>Unique Fact   : </label>
+        <input type="text" name="fact"><br>
         <label>Major    : </label><br>
         <select name="major">
             <option value="Teknik Elektro">Teknik Elektro</option>

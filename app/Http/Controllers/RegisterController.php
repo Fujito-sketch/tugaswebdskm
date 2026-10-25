@@ -33,17 +33,21 @@ class RegisterController extends Controller
         $email = $request->input('email');
         $major = $request->input('major');
         $age = $request->input('age');
+        $address = $request->input('address');
+        $hobby = $request->input('hobby');
+        $about = $request->input('about');
+        $fact = $request->input('fact');
 
         $newProfile = UserBios::create([
             'username' => $userName,
             'password' => $pass,
-            'unique_fact' => 'jelek',
+            'unique_fact' => $fact,
             'email' => $email,
-            'about_me' => 'aku goblok',
-            'hobby' => 'ngumpulin debu',
+            'about_me' => $about,
+            'hobby' => $hobby,
             'major' => $major,
             'role' => 'guest',
-            'address' => 'rancaekek',
+            'address' => $address,
             'age' => $age,
         ]);
 
@@ -55,7 +59,13 @@ class RegisterController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $selected = UserBios::where([
+            ['id', '=', $id]
+        ])->first();
+
+        var_dump($selected);
+
+        //return view('editdata', ['selected' => $selected]);
     }
 
     /**
