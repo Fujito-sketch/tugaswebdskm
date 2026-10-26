@@ -22,6 +22,8 @@
         <input type="text" name="hobby"><br>
         <label>Unique Fact   : </label>
         <input type="text" name="fact"><br>
+        <label>About Me   : </label>
+        <textarea name="about"></textarea><br>
         <label>Major    : </label><br>
         <select name="major">
             <option value="Teknik Elektro">Teknik Elektro</option>

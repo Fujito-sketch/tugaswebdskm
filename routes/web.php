@@ -16,16 +16,21 @@ Route::get('/pissoffmate', [LoginController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth'])->group(function (){    
     Route::get('/dashboard', [LoginController::class, 'showboard'])->name('dasbrot');
+    Route::get('/edit/{id}', [RegisterController::class, 'show'])->name('eeedit');
+    Route::patch('/update/{id}', [RegisterController::class, 'update'])->name('gantitolol');
+    Route::delete('/delete/{id}', [RegisterController::class, 'delete']);
     Route::get('/crot', function () {
         $data = UserBios::all()->toArray();
+        if(UserBios::doesntExist()){
+            $data = "Empty";
+        }
         return view('usercrud', ['userdatas' => $data]);
-    })->name('berisikgoblok');
+    })->name('editpage');
 });
 
 Route::resource('/register', RegisterController::class)->names([
     'index' => 'register',
     'store' => 'register.store',
-    'show' => 'register.show'
 ]);
 
 Route::get('/loginpage', [LoginController::class, 'index'])->name('login');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\UserBios;
+use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Http\Request;
 
@@ -40,7 +41,7 @@ class RegisterController extends Controller
 
         $newProfile = UserBios::create([
             'username' => $userName,
-            'password' => $pass,
+            'password' => Hash::make($pass),
             'unique_fact' => $fact,
             'email' => $email,
             'about_me' => $about,
@@ -63,9 +64,7 @@ class RegisterController extends Controller
             ['id', '=', $id]
         ])->first();
 
-        var_dump($selected);
-
-        //return view('editdata', ['selected' => $selected]);
+        return view('editdata', ['selected' => $selected]);
     }
 
     /**
@@ -81,7 +80,34 @@ class RegisterController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $userName = $request->input('username');
+        $pass = $request->input('pass');
+        $email = $request->input('email');
+        $major = $request->input('major');
+        $age = $request->input('age');
+        $address = $request->input('address');
+        $hobby = $request->input('hobby');
+        $about = $request->input('about');
+        $fact = $request->input('fact');
+
+        $newdata = UserBios::updateOrCreate(
+            ['id' => $id],
+            [
+                'username' => $userName,
+                'password' => Hash::make($pass),
+                'email' => $email,
+                'major' => $major,
+                'age' => $age,
+                'address' => $address,
+                'hobby' => $hobby,
+                'about_me' => $about,
+                'unique_fact' => $fact,
+            ]
+        );
+
+        var_dump("test");
+
+        return redirect()->route('editpage');
     }
 
     /**
@@ -89,6 +115,9 @@ class RegisterController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $record = UserBios::findOrFail($id);
+        $record->delete();
+
+        return redirect()->route('editpage');
     }
 }

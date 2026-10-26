@@ -34,25 +34,34 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($userdatas as $data)
-            <tr>
-                <td>{{$data['id']}}</td>
-                <td>{{$data['username']}}</td>
-                <td>{{$data['email']}}</td>
-                <td>{{$data['about_me']}}</td>
-                <td>{{$data['unique_fact']}}</td>
-                <td>{{$data['hobby']}}</td>
-                <td>{{$data['major']}}</td>
-                <td>{{$data['role']}}</td>
-                <td>{{$data['address']}}</td>
-                <td>{{$data['age']}}</td>
-                <td>
-                    <form action="{{ route('register.show', ['id' => $data['id']]) }}">
-                        <button type="submit"> Edit </button>
-                    </form>
-                </td>
-            </tr>
-            @endforeach
+            @if ($userdatas == "Empty")
+                <h1>No record is available.</h1>
+            @else
+                @foreach ($userdatas as $data)
+                <tr>
+                    <td>{{$data['id']}}</td>
+                    <td>{{$data['username']}}</td>
+                    <td>{{$data['email']}}</td>
+                    <td>{{$data['about_me']}}</td>
+                    <td>{{$data['unique_fact']}}</td>
+                    <td>{{$data['hobby']}}</td>
+                    <td>{{$data['major']}}</td>
+                    <td>{{$data['role']}}</td>
+                    <td>{{$data['address']}}</td>
+                    <td>{{$data['age']}}</td>
+                    <td>
+                        <form action="{{ route('register.show', ['register' => $data['id']]) }}" method="GET">
+                            <button type="submit"> Edit </button>
+                        </form>
+                        <form action="{{ route('register.destroy', ['register' => $data['id']]) }}" method="POST">
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit"> Delete </button>
+                        </form>
+                    </td>
+                </tr>
+                @endforeach
+            @endif
         </tbody>
     </table>
 </body>
