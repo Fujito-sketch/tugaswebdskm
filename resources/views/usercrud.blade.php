@@ -21,9 +21,9 @@
         <thead>
             <tr>
                 <td>No. </td>
-                <td>Nama</td>
-                <td>Email</td>
-                <td>About Me</td>
+                <td>User ID</td>
+                <td>Title</td>
+                <td>Image</td>
                 <td>Fakta Unik</td>
                 <td>Hobby</td>
                 <td>Prodi</td>

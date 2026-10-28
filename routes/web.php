@@ -2,6 +2,7 @@
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Models\UserBios;
+use App\Models\Gallery;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -19,6 +20,10 @@ Route::middleware(['auth'])->group(function (){
     Route::get('/edit/{id}', [RegisterController::class, 'show'])->name('eeedit');
     Route::patch('/update/{id}', [RegisterController::class, 'update'])->name('gantitolol');
     Route::delete('/delete/{id}', [RegisterController::class, 'delete']);
+    Route::delete('/deleteimg/{id}', [RegisterController::class, 'deleteimg'])->name('dielol');
+    Route::get('/editimg/{mediadata}', [RegisterController::class, 'editimg'])->name('etidgabmar');
+    Route::post('/updateimg/{id}', [RegisterController::class, 'updateimg'])->name('padtgmbar');
+    Route::post('/submitimg', [RegisterController::class, 'submitimg'])->name('sumbit');
     Route::get('/crot', function () {
         $data = UserBios::all()->toArray();
         if(UserBios::doesntExist()){
@@ -26,6 +31,20 @@ Route::middleware(['auth'])->group(function (){
         }
         return view('usercrud', ['userdatas' => $data]);
     })->name('editpage');
+    Route::get('/son', function () {
+        $data = Gallery::all()->toArray();
+        if(Gallery::doesntExist()){
+            $data = "Empty";
+        }
+        return view('imgcrud', ['mediadatas' => $data]);
+    })->name('diditpage');
+    Route::get('brot', function () {
+        $data = UserBios::all()->toArray();
+        if(UserBios::doesntExist()){
+            $data = "Empty";
+        }
+        return view('imginput', ['userdatas' => $data]);  
+    })->name('kontol');
 });
 
 Route::resource('/register', RegisterController::class)->names([
