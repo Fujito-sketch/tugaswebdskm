@@ -25,7 +25,10 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($mediadatas as $data)
+            @if($mediadatas == "Empty")
+                <h1>No Media Is Available</h1>
+            @else
+                @foreach ($mediadatas as $data)
                 <tr>
                     <td>{{ $data['id'] }}</td>
                     <td>{{ $data['user_id'] }}</td>
@@ -45,6 +48,7 @@
                     </td>
                 </tr>
             @endforeach
+            @endif
         </tbody>
     </table>
 </body>

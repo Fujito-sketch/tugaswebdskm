@@ -19,7 +19,7 @@ Route::middleware(['auth'])->group(function (){
     Route::get('/dashboard', [LoginController::class, 'showboard'])->name('dasbrot');
     Route::get('/edit/{id}', [RegisterController::class, 'show'])->name('eeedit');
     Route::patch('/update/{id}', [RegisterController::class, 'update'])->name('gantitolol');
-    Route::delete('/delete/{id}', [RegisterController::class, 'delete']);
+    Route::delete('/delete/{id}', [RegisterController::class, 'destroy'])->name('ripbozo');
     Route::delete('/deleteimg/{id}', [RegisterController::class, 'deleteimg'])->name('dielol');
     Route::get('/editimg/{mediadata}', [RegisterController::class, 'editimg'])->name('etidgabmar');
     Route::post('/updateimg/{id}', [RegisterController::class, 'updateimg'])->name('padtgmbar');

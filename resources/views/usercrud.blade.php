@@ -53,7 +53,7 @@
                         <form action="{{ route('register.show', ['register' => $data['id']]) }}" method="GET">
                             <button type="submit"> Edit </button>
                         </form>
-                        <form action="{{ route('register.destroy', ['register' => $data['id']]) }}" method="POST">
+                        <form action="{{ route('ripbozo', ['id' => $data['id']]) }}" method="POST">
                             @method('DELETE')
                             @csrf
                             <button type="submit"> Delete </button>
