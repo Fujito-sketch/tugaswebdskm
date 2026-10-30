@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XDDDDD</title>
+    @vite('resources/css/app.css')
 </head>
-<body>
+<body class="oldwoman">
     <form action="{{ route('login.store') }}" method="post">
         @csrf
         <label>Username</label>

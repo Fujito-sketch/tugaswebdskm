@@ -44,7 +44,7 @@ Route::middleware(['auth'])->group(function (){
             $data = "Empty";
         }
         return view('imginput', ['userdatas' => $data]);  
-    })->name('kontol');
+    })->name('imginput');
 });
 
 Route::resource('/register', RegisterController::class)->names([

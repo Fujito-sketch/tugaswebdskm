@@ -1,8 +1,8 @@
 <div>
-    <ul>
-        <li><a href="{{ route('dasbrot') }}">Home</a></li>
-        <li><a href="{{ route('kontol')}}">Submit Image</a></li>
-        <li><a href="{{ route('editpage') }}">User Table</a></li>
-        <li><a href="{{ route('diditpage') }}">Media Table</a></li>
+    <ul class="nav pink bigger">
+        <li><a class="evil rounded fat" href="{{ route('dasbrot') }}">Home</a></li>
+        <li><a class="evil rounded fat" href="{{ route('imginput')}}">Submit Image</a></li>
+        <li><a class="evil rounded fat" href="{{ route('editpage') }}">User Table</a></li>
+        <li><a class="evil rounded fat" href="{{ route('diditpage') }}">Media Table</a></li>
     </ul>
 </div>

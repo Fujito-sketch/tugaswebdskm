@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ok</title>
+    @vite('resources/css/app.css')
 </head>
-<body>
+<body class="oldwoman">
+    <x-package-dashbar/>
     <form action="{{ route('register.update', ['register' => $selected['id']]) }}" method="POST">
         @csrf
         @method('PATCH')

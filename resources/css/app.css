@@ -9,3 +9,111 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+table {
+    width: 98%;
+    border-collapse: separate;
+    border-spacing: 0 1vh 1vh 1vh;
+    font-size: 1.2vw;
+}
+
+.pink {
+    background-color: pink;
+}
+
+.rounded {
+    border-radius: 5px;
+}
+
+.fat {
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+.thin {
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+}
+
+.kindaevil {
+    background-color: rgb(29, 29, 29);
+}
+
+.evil {
+    background-color: rgb(29, 29, 29);
+    color: white;
+}
+
+.kind {
+    background-color: white;
+    color: rgb(57, 57, 57);
+}
+
+.mt1 {
+    margin-top: 1vh;
+}
+
+.bst1 {
+    border-spacing: 0vh 0.5vh 1vh 1vh;
+}
+
+.id {
+    width: 3vw;
+}
+
+.blood {
+    background-color: rgb(173, 64, 64);
+    color: white;
+}
+
+.piss {
+    background-color: rgb(223, 193, 60);
+    color: black;
+}
+
+.WIDE {
+    width: 100%;
+}
+
+.nav {
+    padding-top: 2.5vh;
+    padding-bottom: 2.5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.oldwoman {
+    background-color: rgb(83, 63, 66);
+}
+
+.imsotall {
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+.imsothick {
+    font-weight: bolder;
+    font-size: 3vw;
+}
+
+.bigger {
+    font-size: 1.5vw;
+}
+
+.sidestepR {
+    margin-left: 1vw;
+}
+
+.sidestepL {
+    margin-right: 1vw;
+}
+
+.evilkinda {
+    color: black;
+}
