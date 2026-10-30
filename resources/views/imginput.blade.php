@@ -12,7 +12,7 @@
     <div class="center">
         <form action="{{ route('sumbit') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <div class="evil imsotall superfat">
+            <div class="evil rounded imsotall superfat">
                 <div class="sidestepR sidestepL">
                     <h1 class="imsothick">Input Gambar</h1><br>
                     <div class="downS"></div>

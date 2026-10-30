@@ -56,7 +56,7 @@
                     <td class="rounded">{{$data['age']}}</td>
                     <td class="rounded">
                         <form action="{{ route('register.show', ['register' => $data['id']]) }}" method="GET">
-                            <button type="submit" class="piss fat WIDE"> Edit </button>
+                            <button type="submit" class="piss rounded fat WIDE"> Edit </button>
                         </form>
                         <form action="{{ route('ripbozo', ['id' => $data['id']]) }}" method="POST">
                             @method('DELETE')
