@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\UserBios;
+use App\Models\Gallery;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
@@ -49,7 +50,11 @@ class LoginController extends Controller
     }
 
     public function showboard(){
-        return view('dashboard');
+        $userid = auth()->id();
+        $userdata = UserBios::where([
+            ['id', '=', $userid]
+        ])->first();
+        return view('dashboard', ['loggeduserdata' => $userdata]);
     }
 
     /**
@@ -91,5 +96,17 @@ class LoginController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/');
+    }
+
+    public function getprofile(Request $request){
+        $id = $request->input('id');
+        $profdat = UserBios::where([
+            ['id', '=', $id]
+        ])->first();
+        $galdat = Gallery::where([
+            ['user_id', '=', $id]
+        ])->get()->toArray();
+
+        return view('profilepage', ['profiledata' => $profdat, 'imgs' => $galdat]);
     }
 }

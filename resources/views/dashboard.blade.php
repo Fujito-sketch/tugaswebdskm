@@ -8,12 +8,15 @@
 </head>
 <body class="oldwoman">
     <x-package-dashbar/>
-    <h1 class="imsothick">This is a Dashboard</h1>
     <br>
-    <h1 class="imsothick">This is a Logout Button</h1>
-    <br>
-    <form action="{{ route ('logout') }}">
-        <button type="submit" class="fat pink rounded">Logout</button>
-    </form>
+    <div class="evil imsotall">
+        <div class=" sidestepR sidestepL">
+            <h1 class="imsothick">Welcome {{$loggeduserdata['username']}}</h1>
+            <br>
+            <form action="{{ route ('logout') }}">
+                <button type="submit" class="fat pink rounded evilkinda">Logout</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

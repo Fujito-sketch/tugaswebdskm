@@ -10,6 +10,18 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
+a {
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+}
+
+input {
+    cursor: pointer;
+}
+
 table {
     width: 98%;
     border-collapse: separate;
@@ -49,7 +61,7 @@ table {
 }
 
 .kind {
-    background-color: white;
+    background-color: rgb(238, 201, 229);
     color: rgb(57, 57, 57);
 }
 
@@ -116,4 +128,82 @@ table {
 
 .evilkinda {
     color: black;
+}
+
+.sidedashR {
+    margin-left: 5vw;
+}
+
+.sidedashL {
+    margin-right: 5vw;
+}
+
+.downS {
+    margin-top: 2vh;
+}
+
+.petite {
+    width: 25%;
+    height: 25%;
+}
+
+.hardfall {
+    margin-top: 8vh;
+}
+
+.plink {
+    font-weight: bolder;
+    color: pink;
+}
+
+.center {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.superfat {
+    padding-top: 9vh;
+    padding-bottom: 9vh;
+    padding-left: 9vw;
+    padding-right: 9vw;
+}
+
+.widefat {
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    padding-left: 6vw;
+    padding-right: 6vw;
+}
+
+.biginput {
+    font-size: 2vw;
+}
+
+.tallfat {
+    padding-top: 9vh;
+    padding-bottom: 9vh;
+    padding-left: 4vw;
+    padding-right: 4vw;
+}
+
+.paleboy {
+    background-color: rgb(210, 182, 187);
+}
+
+.bigboy {
+    font-size: 7vw;
+}
+
+.b {
+    font-weight: bolder;
+}
+
+.tongue {
+    background-color: palevioletred;
+}
+
+.med {
+    width: 85%;
+    height: 85%;
 }

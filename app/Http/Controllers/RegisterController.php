@@ -41,6 +41,7 @@ class RegisterController extends Controller
         $hobby = $request->input('hobby');
         $about = $request->input('about');
         $fact = $request->input('fact');
+        $role = $request->input('role');
 
         $newProfile = UserBios::create([
             'username' => $userName,
@@ -50,7 +51,7 @@ class RegisterController extends Controller
             'about_me' => $about,
             'hobby' => $hobby,
             'major' => $major,
-            'role' => 'guest',
+            'role' => $role,
             'address' => $address,
             'age' => $age,
         ]);
@@ -92,6 +93,7 @@ class RegisterController extends Controller
         $hobby = $request->input('hobby');
         $about = $request->input('about');
         $fact = $request->input('fact');
+        $role = $request->input('role');
         
         if(!$request->filled('pass')){
             $newdata = UserBios::updateOrCreate(
@@ -105,6 +107,7 @@ class RegisterController extends Controller
                 'hobby' => $hobby,
                 'about_me' => $about,
                 'unique_fact' => $fact,
+                'role' => $role,
             ]
         );
         }else{
@@ -119,7 +122,7 @@ class RegisterController extends Controller
                 'address' => $address,
                 'hobby' => $hobby,
                 'about_me' => $about,
-                'unique_fact' => $fact,
+                'role' => $role,
             ]
         );
         }

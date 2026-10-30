@@ -6,7 +6,7 @@ use App\Models\Gallery;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return redirect('/dashboard');
+    return redirect('/welcome');
 });
 
 Route::get('/son', function () {
@@ -15,7 +15,19 @@ Route::get('/son', function () {
 
 Route::get('/pissoffmate', [LoginController::class, 'logout'])->name('logout');
 
-Route::middleware(['auth'])->group(function (){    
+Route::get('/welcome', function () {
+    $userdata = UserBios::all()->toArray();
+    $images = Gallery::all()->toArray();
+    return view('landingpage', ['userdata' => $userdata, 'images' => $images]);
+})->name('landing');
+
+Route::get('/profile', [LoginController::class, 'getprofile'])->name('profile');
+
+Route::middleware(['auth'])->group(function (){ 
+    Route::resource('/register', RegisterController::class)->names([
+    'index' => 'register',
+    'store' => 'register.store',
+]);   
     Route::get('/dashboard', [LoginController::class, 'showboard'])->name('dasbrot');
     Route::get('/edit/{id}', [RegisterController::class, 'show'])->name('eeedit');
     Route::patch('/update/{id}', [RegisterController::class, 'update'])->name('gantitolol');
@@ -46,11 +58,6 @@ Route::middleware(['auth'])->group(function (){
         return view('imginput', ['userdatas' => $data]);  
     })->name('imginput');
 });
-
-Route::resource('/register', RegisterController::class)->names([
-    'index' => 'register',
-    'store' => 'register.store',
-]);
 
 Route::get('/loginpage', [LoginController::class, 'index'])->name('login');
 

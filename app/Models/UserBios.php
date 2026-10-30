@@ -48,4 +48,9 @@ class UserBios extends Authenticatable
             'password' => 'hashed', // Automatically hashes passwords when saving
         ];
     }
+
+    public function hasRole(string $role): bool
+    {
+        return $this->role === $role;
+    }
 }
