@@ -26,7 +26,7 @@
             <thead>
             <tr>
                 <td class="pink rounded thin id">No. </td>
-                <td class="pink rounded thin">User ID</td>
+                <td class="pink rounded thin">Username</td>
                 <td class="pink rounded thin">Title</td>
                 <td class="pink rounded thin">Image</td>
                 <td class="pink rounded thin">Fakta Unik</td>
