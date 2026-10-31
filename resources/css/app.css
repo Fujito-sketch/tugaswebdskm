@@ -104,6 +104,15 @@ table {
     width: 100%;
 }
 
+.nav-b {
+    padding-top: 2.5vh;
+    padding-bottom: 2.5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
 .oldwoman {
     background-image: url('../images/bg-admin.png');
     background-size: cover;
@@ -290,4 +299,8 @@ table {
 
 .gappy {
     gap: 10vw;
+}
+
+.cgap {
+    column-gap: 2vw;
 }

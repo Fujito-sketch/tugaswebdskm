@@ -20,7 +20,7 @@
         @foreach($userdata as $data)
         <div class="WIDE">
             <div class="hardfall"></div>
-            <div class="sidedashR sidedashL cheek rounded">
+            <div class="cheek rounded">
                 <div class="center baby">
                     @foreach($images as $image)
                         @if($image['title'] == $data['username'])

@@ -51,7 +51,9 @@
         <h1 class="sidepunchR sidepunchL rounded downS bigboy imsothick peach">Gallery Saya</h1>
         <div class="image-grid">
             @foreach($imgs as $img)
-            <img class="sidestepR downS imgitems rounded" src="{{ asset('storage/' . $img['file_path']) }}" alt="">
+                @if($img['user_id'] == $profiledata['id'])
+                    <img class="sidestepR downS imgitems rounded" src="{{ asset('storage/' . $img['file_path']) }}" alt="">
+                @endif
             @endforeach
         </div>
         <div class="downS"></div>

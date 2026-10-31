@@ -103,9 +103,7 @@ class LoginController extends Controller
         $profdat = UserBios::where([
             ['id', '=', $id]
         ])->first();
-        $galdat = Gallery::where([
-            ['user_id', '=', $id]
-        ])->get()->toArray();
+        $galdat = Gallery::all()->toArray();
 
         return view('profilepage', ['profiledata' => $profdat, 'imgs' => $galdat]);
     }
