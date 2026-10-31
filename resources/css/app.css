@@ -119,6 +119,10 @@ table {
     font-size: 3vw;
 }
 
+.cntr {
+    text-align: center;
+}
+
 .bigger {
     font-size: 1.5vw;
 }
@@ -219,6 +223,10 @@ table {
     font-size: 7vw;
 }
 
+.pbig {
+    font-size: 5vw;
+}
+
 .b {
     font-weight: bolder;
 }
@@ -254,4 +262,32 @@ table {
 
 .lowkick {
     padding-bottom: 1vh;
+}
+
+.hooves {
+    background-color: #3A2A30;
+}
+
+.lips {
+    background-color: #EA7596;
+}
+
+.thumb {
+    background-color: #F3B3C5;
+}
+
+.peach {
+    background-color: #F6C4D2;
+}
+
+.cheek {
+    background-color: #FAE3EA;
+}
+
+.baby {
+    height: 50%;
+}
+
+.gappy {
+    gap: 10vw;
 }
